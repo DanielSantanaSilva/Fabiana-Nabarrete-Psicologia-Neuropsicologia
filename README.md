@@ -1,4 +1,4 @@
-# Fabiana Nabarréte | Psicologia Clínica & Neuropsicologia
+# Fabiana Nabarréte | Psicologia & Neuropsicologia
 
 Website institucional e plataforma de agendamento de consultas para a psicóloga clínica e neuropsicóloga **Fabiana Nabarréte** (CRP 06/123456), especialista pela Faculdade de Ciências Médicas da Santa Casa de São Paulo.
 
