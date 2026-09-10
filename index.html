@@ -1243,12 +1243,46 @@
       class="flex flex-col md:flex-row items-center justify-between gap-4 pt-4 border-t border-border-subtle font-body-sm text-body-sm text-text-muted">
       <div>© 2025 Fabiana Nabarréte. Todos os direitos reservados. CRP 06/123456.</div>
       <div class="flex items-center gap-6">
-        <a class="hover:text-primary transition-colors" href="#">Privacidade &amp; Termos</a>
+        <button class="hover:text-primary transition-colors" id="privacyModalBtn" type="button">Privacidade &amp; Termos</button>
         <a class="hover:text-primary transition-colors" href="#">Resolução CFP nº 11/2018</a>
       </div>
     </div>
   </div>
 </footer>
+
+<div class="fixed inset-0 z-[10000] hidden items-center justify-center bg-on-surface/60 p-4 backdrop-blur-sm" id="privacyModal"
+  role="dialog" aria-modal="true" aria-labelledby="privacyModalTitle">
+  <div class="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-xl bg-surface-card p-6 shadow-2xl md:p-8">
+    <button class="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full text-on-surface-variant transition-colors hover:bg-surface-sage hover:text-primary"
+      id="privacyModalClose" type="button" aria-label="Fechar Privacidade e Termos">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <h2 class="pr-12 font-headline-md text-headline-md text-primary" id="privacyModalTitle">Privacidade &amp; Termos</h2>
+    <div class="mt-6 space-y-5 font-body-md text-body-md leading-relaxed text-on-surface-variant">
+      <section>
+        <h3 class="mb-2 font-title-md text-title-md font-semibold text-on-surface">Coleta e uso de informações</h3>
+        <p>Os dados informados no formulário de contato são utilizados exclusivamente para responder à sua solicitação, prestar informações e facilitar o agendamento de atendimento psicológico.</p>
+      </section>
+      <section>
+        <h3 class="mb-2 font-title-md text-title-md font-semibold text-on-surface">Compartilhamento e armazenamento</h3>
+        <p>O formulário direciona sua mensagem ao WhatsApp. O tratamento das informações nessa plataforma também está sujeito às políticas de privacidade do WhatsApp. Não comercializamos seus dados pessoais.</p>
+      </section>
+      <section>
+        <h3 class="mb-2 font-title-md text-title-md font-semibold text-on-surface">Serviços externos</h3>
+        <p>Este site utiliza serviços de terceiros, como Google Maps, Google Fonts e WhatsApp, que podem processar dados técnicos conforme suas próprias políticas.</p>
+      </section>
+      <section>
+        <h3 class="mb-2 font-title-md text-title-md font-semibold text-on-surface">Confidencialidade</h3>
+        <p>Informações relacionadas ao atendimento psicológico são tratadas com confidencialidade, observando o Código de Ética Profissional do Psicólogo e a legislação aplicável.</p>
+      </section>
+      <section>
+        <h3 class="mb-2 font-title-md text-title-md font-semibold text-on-surface">Seus direitos</h3>
+        <p>Você pode solicitar informações, correção ou exclusão dos seus dados pessoais pelo e-mail <a class="font-medium text-primary underline" href="mailto:psi.nabarretefabiana@outlook.com">psi.nabarretefabiana@outlook.com</a>.</p>
+      </section>
+      <p class="border-t border-border-subtle pt-4 text-body-sm text-text-muted">Ao utilizar este site e enviar o formulário, você declara estar ciente destes termos. Última atualização: setembro de 2026.</p>
+    </div>
+  </div>
+</div>
 
 <!-- Scripts Modulares em ES Modules -->
   <script type="module" src="js/main.js"></script>
