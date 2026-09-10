@@ -1,9 +1,10 @@
-import { readFile, writeFile } from 'node:fs/promises';
+import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const indexPath = path.join(root, 'index.html');
+const outputDir = path.join(root, 'dist');
 const checkOnly = process.argv.includes('--check');
 
 const components = [
@@ -48,6 +49,16 @@ if (checkOnly) {
     process.stderr.write('index.html está desatualizado. Execute npm run build.\n');
     process.exitCode = 1;
   }
-} else if (output !== current) {
-  await writeFile(indexPath, output, 'utf8');
+} else {
+  if (output !== current) {
+    await writeFile(indexPath, output, 'utf8');
+  }
+
+  await rm(outputDir, { recursive: true, force: true });
+  await mkdir(outputDir, { recursive: true });
+  await writeFile(path.join(outputDir, 'index.html'), output, 'utf8');
+
+  for (const directory of ['assets', 'css', 'js']) {
+    await cp(path.join(root, directory), path.join(outputDir, directory), { recursive: true });
+  }
 }

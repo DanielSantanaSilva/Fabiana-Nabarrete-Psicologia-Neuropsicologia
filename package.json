@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Website institucional e plataforma de agendamento da Psicóloga e Neuropsicóloga Fabiana Nabarréte.",
   "main": "index.html",
+  "engines": {
+    "node": ">=20 <23"
+  },
   "scripts": {
     "build": "node scripts/build.mjs",
     "check": "node scripts/build.mjs --check",
