@@ -1,0 +1,61 @@
+/**
+ * Design System: Serene Clinical Editorial
+ * Tokens de Cores, Tipografia, Espaçamento e Elevação
+ */
+
+:root {
+  /* Cores Primárias e Secundárias */
+  --color-primary: #00463e;
+  --color-primary-container: #1b5e55;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #96d5c9;
+  --color-primary-fixed: #afefe3;
+  --color-primary-fixed-dim: #93d3c7;
+  
+  --color-secondary: #37675f;
+  --color-secondary-container: #baede2;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #3d6d65;
+
+  /* Acentos e Terciárias */
+  --color-tertiary: #553707;
+  --color-tertiary-container: #6f4e1d;
+  --color-accent-teal: #138275;
+  --color-accent-gold: #c59b63;
+
+  /* Superfícies Orgânicas Terapêuticas */
+  --color-surface: #f6faf7;
+  --color-surface-canvas: #FBF9F5;
+  --color-surface-cream: #F5F1E9;
+  --color-surface-sage: #E8EFE9;
+  --color-surface-card: #FFFFFF;
+  --color-surface-dim: #d7dbd8;
+  --color-surface-container: #eaefeb;
+  --color-surface-container-low: #f0f5f1;
+  --color-surface-container-high: #e5e9e6;
+
+  /* Textos e Contornos */
+  --color-on-surface: #181d1b;
+  --color-on-surface-variant: #3f4946;
+  --color-text-muted: #5E6964;
+  --color-border-subtle: #E5DFD5;
+  --color-outline: #6f7976;
+
+  /* Tipografia */
+  --font-editorial: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Sombras Tonalizadas */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 4px 20px -2px rgba(27, 94, 85, 0.06), 0 2px 6px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 12px 32px -4px rgba(20, 71, 64, 0.12), 0 4px 12px rgba(0, 0, 0, 0.03);
+  --shadow-xl: 0 24px 48px -12px rgba(20, 71, 64, 0.18);
+
+  /* Raios de Borda */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+}

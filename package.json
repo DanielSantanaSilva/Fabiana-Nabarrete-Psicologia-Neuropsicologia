@@ -1,0 +1,21 @@
+{
+  "name": "fabiana-nabarrete-psicologia-neuropsicologia",
+  "version": "1.0.0",
+  "description": "Website institucional e plataforma de agendamento da Psicóloga e Neuropsicóloga Fabiana Nabarréte.",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve . -l 3000",
+    "start": "npx serve . -l 3000"
+  },
+  "keywords": [
+    "psicologia",
+    "neuropsicologia",
+    "tdah",
+    "tea",
+    "terapia",
+    "santo-andre",
+    "maua"
+  ],
+  "author": "Fabiana Nabarréte",
+  "license": "ISC"
+}

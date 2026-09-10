@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 50" width="340" height="50" fill="none">
+  <g transform="translate(4, 3)">
+    <circle cx="22" cy="22" r="21" stroke="#1B5E55" stroke-width="1.6" fill="#F0F5F1"/>
+    <!-- Greek letter Psi -->
+    <path d="M22 7 V34 M13 16 C13 25.5 22 27.5 22 27.5 C22 27.5 31 25.5 31 16" stroke="#1B5E55" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="22" cy="6.5" r="2" fill="#1B5E55"/>
+  </g>
+  <text x="56" y="24" font-family="'Playfair Display', Georgia, serif" font-size="16" font-weight="700" fill="#144740" letter-spacing="0.5">FABIANA NABARRÉTE</text>
+  <text x="56.5" y="38" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9" font-weight="600" fill="#4B635D" letter-spacing="1.2">PSICOLOGIA &amp; NEUROPSICOLOGIA</text>
+</svg>
