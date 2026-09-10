@@ -4,8 +4,10 @@
   "description": "Website institucional e plataforma de agendamento da Psicóloga e Neuropsicóloga Fabiana Nabarréte.",
   "main": "index.html",
   "scripts": {
-    "dev": "npx serve . -l 3000",
-    "start": "npx serve . -l 3000"
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/build.mjs --check",
+    "dev": "npm run build && npx serve . -l 3000",
+    "start": "npm run dev"
   },
   "keywords": [
     "psicologia",
