@@ -6,7 +6,7 @@
 export const CLINIC_CONFIG = {
   name: "Fabiana Nabarréte",
   title: "Psicóloga Clínica & Neuropsicóloga",
-  crp: "CRP 06/123456",
+  crp: "CRP 06/197947",
   specialization: "Especialista pela Santa Casa de SP",
   phone: "(11) 98298-5683",
   whatsappRaw: "5511982985683",
