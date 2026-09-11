@@ -1,52 +1,45 @@
-/**
- * Módulo do Formulário de Contato e Agendamento
- * Valida os campos e redireciona com mensagem personalizada para o WhatsApp
- */
-
-import { getWhatsAppUrl } from '../config.js';
-
 export function initContactForm() {
   const form = document.getElementById('contactForm');
   const feedback = document.getElementById('formFeedback');
+  const feedbackMessage = document.getElementById('formFeedbackMessage');
+  const submitButton = form?.querySelector('button[type="submit"]');
 
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
 
-    const nome = document.getElementById('nome')?.value.trim() || '';
-    const whatsapp = document.getElementById('whatsapp')?.value.trim() || '';
-    const email = document.getElementById('email')?.value.trim() || '';
-    const modalidade = document.getElementById('modalidade')?.value || '';
-    const demanda = document.getElementById('demanda')?.value || '';
-    const mensagem = document.getElementById('mensagem')?.value.trim() || '';
+    if (!form.reportValidity()) return;
 
-    // Feedback visual imediato
-    if (feedback) {
+    if (feedback && feedbackMessage) {
       feedback.classList.remove('hidden');
+      feedbackMessage.textContent = 'Enviando sua solicitação...';
     }
 
-    // Formatação da mensagem para o WhatsApp
-    const linhas = [
-      `Olá, Fabiana! Gostaria de agendar uma consulta.`,
-      ``,
-      `*Nome:* ${nome}`,
-      `*WhatsApp:* ${whatsapp}`,
-      `*E-mail:* ${email}`,
-      `*Modalidade:* ${modalidade}`,
-      `*Demanda:* ${demanda}`
-    ];
+    if (submitButton) submitButton.disabled = true;
 
-    if (mensagem) {
-      linhas.push(`*Mensagem:* ${mensagem}`);
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/psi.nabarretefabiana@outlook.com', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json'
+        },
+        body: new FormData(form)
+      });
+
+      if (!response.ok) throw new Error('Falha no envio');
+
+      form.reset();
+
+      if (feedbackMessage) {
+        feedbackMessage.textContent = 'Obrigado! Sua solicitação foi enviada com sucesso.';
+      }
+    } catch {
+      if (feedbackMessage) {
+        feedbackMessage.textContent = 'Não foi possível enviar agora. Tente novamente ou entre em contato pelo WhatsApp.';
+      }
+    } finally {
+      if (submitButton) submitButton.disabled = false;
     }
-
-    const textoFinal = linhas.join('\n');
-    const urlDestino = getWhatsAppUrl(textoFinal);
-
-    // Redirecionamento suave
-    setTimeout(() => {
-      window.open(urlDestino, '_blank');
-    }, 800);
   });
 }
