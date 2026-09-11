@@ -10,7 +10,7 @@ export const CLINIC_CONFIG = {
   specialization: "Especialista pela Santa Casa de SP",
   phone: "(11) 98298-5683",
   whatsappRaw: "5511982985683",
-  email: "psi.nabarretefabiana@outlook.com",
+  email: "contato@fabiananabarrete.com.br",
   defaultWhatsAppMessage: "Olá, gostaria de informações sobre agendamento de consulta.",
   addresses: {
     santoAndre: {

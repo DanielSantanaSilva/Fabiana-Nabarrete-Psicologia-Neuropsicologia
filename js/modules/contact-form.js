@@ -19,7 +19,7 @@ export function initContactForm() {
     if (submitButton) submitButton.disabled = true;
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/psi.nabarretefabiana@outlook.com', {
+      const response = await fetch('https://formsubmit.co/ajax/contato@fabiananabarrete.com.br', {
         method: 'POST',
         headers: {
           Accept: 'application/json'

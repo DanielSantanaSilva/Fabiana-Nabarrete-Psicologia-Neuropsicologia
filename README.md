@@ -71,7 +71,7 @@ Para trocar a assinatura exibida, altere o atributo `src` das imagens em `compon
 
 ## ✉️ Formulário de Agendamento
 
-O formulário envia as solicitações para `psi.nabarretefabiana@outlook.com` por meio do FormSubmit, sem expor credenciais privadas no navegador. A primeira submissão requer a confirmação do endereço destinatário no e-mail de ativação enviado pelo serviço.
+O formulário envia as solicitações para `contato@fabiananabarrete.com.br` por meio do FormSubmit, sem expor credenciais privadas no navegador. A primeira submissão requer a confirmação do endereço destinatário no e-mail de ativação enviado pelo serviço.
 
 O envio inclui nome, WhatsApp, e-mail, modalidade, demanda e mensagem opcional. O formulário também possui validação nativa, campo antispam e feedback de sucesso ou erro.
 
