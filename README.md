@@ -1,6 +1,6 @@
-# Fabiana Nabarréte | Psicologia & Neuropsicologia
+# Fabiana Nabarrete | Psicologia & Neuropsicologia
 
-Website institucional e plataforma de agendamento de consultas para a psicóloga clínica e neuropsicóloga **Fabiana Nabarréte** (CRP 06/123456), especialista pela Faculdade de Ciências Médicas da Santa Casa de São Paulo.
+Website institucional e plataforma de agendamento de consultas para a psicóloga clínica e neuropsicóloga **Fabiana Nabarrete** (CRP 06/123456), especialista pela Faculdade de Ciências Médicas da Santa Casa de São Paulo.
 
 ---
 
@@ -11,9 +11,11 @@ O projeto foi construído seguindo rigorosos padrões de engenharia front-end, g
 ```
 Fabiana-Nabarrete-Psicologia-Neuropsicologia/
 ├── assets/
-│   ├── icons/                   # Logotipos e ícones vetoriais em SVG
-│   │   ├── logo.svg             # Emblema clássico com letra grega Psi
-│   │   └── logo-full.svg        # Versão horizontal completa para header
+│   ├── icons/                   # Identidade visual e variações oficiais da marca
+│   │   ├── Fabiana_Nabarrete_Brand_Manual.pdf # Manual oficial de identidade visual
+│   │   ├── logo-horizontal.png  # Assinatura principal para header e footer
+│   │   ├── logo-vertical.png    # Assinatura para espaços verticais ou quadrados
+│   │   └── logo-isolado.png     # Símbolo para favicon e aplicações compactas
 │   └── images/                  # Fotografia de alta resolução
 │       └── fabiana-nabarrete.jpg
 ├── css/
@@ -24,7 +26,8 @@ Fabiana-Nabarrete-Psicologia-Neuropsicologia/
 │   ├── config.js                # Centralização de contatos, WhatsApp e endereços
 │   ├── modules/
 │   │   ├── navigation.js        # Controle do menu mobile e navegação
-│   │   ├── contact-form.js      # Validação e encaminhamento para WhatsApp
+│   │   ├── contact-form.js      # Validação e envio do formulário por e-mail
+│   │   ├── privacy-modal.js     # Controle do modal de privacidade
 │   │   └── scroll-effects.js    # Transições de scroll e elevação da navbar
 │   └── main.js                  # Ponto de entrada modular ES6
 ├── components/                  # Seções isoladas em HTML para manutenção ágil
@@ -46,33 +49,58 @@ Fabiana-Nabarrete-Psicologia-Neuropsicologia/
 
 ---
 
-## 🎨 Design System: Serene Clinical Editorial
+## 🎨 Identidade Visual
 
-* **Tipografia:**
-  * *Playfair Display:* Títulos elegantes, nobres e editoriais.
-  * *Plus Jakarta Sans:* Textos clínicos, navegação e botões com máxima legibilidade.
-* **Cores Principais:**
-  * Primária: `#00463e` / `#1B5E55` (verde profundo terapêutico)
-  * Secundária: `#144740` / `#37675F`
-  * Acentos: `#C59B63` (ouro sutil) e `#138275` (teal vivo)
-  * Telas/Superfícies: `#FBF9F5` (canvas), `#F5F1E9` (creme), `#E8EFE9` (sage) e `#FFFFFF` (cards)
+A marca segue as diretrizes do arquivo `assets/icons/Fabiana_Nabarrete_Brand_Manual.pdf`.
+
+* **Assinatura horizontal:** versão principal, aplicada no cabeçalho e no rodapé.
+* **Assinatura vertical:** versão secundária para espaços verticais ou quadrados.
+* **Ícone isolado:** símbolo de apoio, aplicado como favicon e em espaços compactos.
+* **Cores oficiais da marca:**
+  * Verde Floresta: `#2D5A43`
+  * Verde Sálvia: `#8A9A7B`
+  * Off-White: `#F8F9F5`
+  * Grafite: `#1A221E`
+* **Tipografia da marca:** Blacker Sans Text.
+
+O restante da interface utiliza o design system Serene Clinical Editorial, com Playfair Display em títulos e Plus Jakarta Sans em textos, navegação e botões.
+
+Para trocar a assinatura exibida, altere o atributo `src` das imagens em `components/header.html` e `components/footer.html` para um dos arquivos disponíveis em `assets/icons/`. Após a alteração, execute `npm run build`.
+
+---
+
+## ✉️ Formulário de Agendamento
+
+O formulário envia as solicitações para `psi.nabarretefabiana@outlook.com` por meio do FormSubmit, sem expor credenciais privadas no navegador. A primeira submissão requer a confirmação do endereço destinatário no e-mail de ativação enviado pelo serviço.
+
+O envio inclui nome, WhatsApp, e-mail, modalidade, demanda e mensagem opcional. O formulário também possui validação nativa, campo antispam e feedback de sucesso ou erro.
 
 ---
 
 ## ⚡ Como Rodar o Projeto Localmente
 
 ### Pré-requisitos
-* Node.js instalado (ou qualquer servidor HTTP estático).
+* Node.js 20, 21 ou 22 instalado.
 
 ### Execução
 1. Abra o terminal na pasta do projeto.
-2. Execute o servidor:
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+3. Inicie o servidor:
    ```bash
    npm start
-   # ou
-   npx serve . -l 3000
    ```
-3. Acesse `http://localhost:3000` no seu navegador.
+4. Acesse `http://localhost:3000` no navegador.
+
+### Scripts
+
+```bash
+npm run dev      # Gera o site e inicia o servidor local
+npm run build    # Consolida os componentes e gera a pasta dist
+npm run check    # Verifica se o index.html está sincronizado
+```
 
 ---
 
@@ -87,4 +115,4 @@ Este projeto é 100% estático e pode ser hospedado gratuitamente e com SSL auto
 
 ## 📝 Atualização de Informações de Contato
 
-Para atualizar telefone, WhatsApp ou endereços da clínica, basta alterar o arquivo central [`js/config.js`](file:///d:/Daniel/Meus%20Projetos/Fabiana-Nabarrete-Psicologia-Neuropsicologia/js/config.js).
+Para atualizar telefone, WhatsApp, e-mail ou endereços da clínica, altere o arquivo central [`js/config.js`](js/config.js). O endereço destinatário do formulário também deve ser atualizado em [`components/contact.html`](components/contact.html) e [`js/modules/contact-form.js`](js/modules/contact-form.js). Depois, execute `npm run build`.
