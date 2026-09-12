@@ -1,11 +1,13 @@
 export function initPrivacyModal() {
   const modal = document.getElementById('privacyModal');
-  const openButton = document.getElementById('privacyModalBtn');
+  const openButtons = document.querySelectorAll('#privacyModalBtn, [data-open-privacy-modal]');
   const closeButton = document.getElementById('privacyModalClose');
+  let lastFocusedElement;
 
-  if (!modal || !openButton || !closeButton) return;
+  if (!modal || !openButtons.length || !closeButton) return;
 
-  function openModal() {
+  function openModal(event) {
+    lastFocusedElement = event.currentTarget;
     modal.classList.remove('hidden');
     modal.classList.add('flex');
     document.body.classList.add('overflow-hidden');
@@ -16,10 +18,10 @@ export function initPrivacyModal() {
     modal.classList.add('hidden');
     modal.classList.remove('flex');
     document.body.classList.remove('overflow-hidden');
-    openButton.focus();
+    lastFocusedElement?.focus();
   }
 
-  openButton.addEventListener('click', openModal);
+  openButtons.forEach((button) => button.addEventListener('click', openModal));
   closeButton.addEventListener('click', closeModal);
   modal.addEventListener('click', (event) => {
     if (event.target === modal) closeModal();

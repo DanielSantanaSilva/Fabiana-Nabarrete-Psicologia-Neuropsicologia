@@ -7,10 +7,12 @@ import { initNavigation } from './modules/navigation.js';
 import { initContactForm } from './modules/contact-form.js';
 import { initScrollEffects } from './modules/scroll-effects.js';
 import { initPrivacyModal } from './modules/privacy-modal.js';
+import { initCookieConsent } from './modules/cookie-consent.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initContactForm();
   initScrollEffects();
   initPrivacyModal();
+  initCookieConsent();
 });
